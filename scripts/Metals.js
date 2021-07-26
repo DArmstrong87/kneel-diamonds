@@ -14,11 +14,10 @@ export const Metals = () => {
     // This is how you have been converting objects to <li> elements
     for (const metal of metals) {
         html += `<li>
-            <input type="radio" name="metal" value="${metal.id}" /> ${metal.metal}
-        </li>`
+                <input type="radio" name="metal" value="${metal.id}" /> ${metal.metal}
+                </li>`
     }
 
     html += "</ul>"
     return html
 }
-
