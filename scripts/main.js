@@ -1,4 +1,7 @@
+import { addCustomOrder } from "./database.js"
 import { KneelDiamonds } from "./KneelDiamonds.js"
+import { getOrders } from "./database.js"
+const customOrders = getOrders()
 
 const mainContainer = document.querySelector("#container")
 
@@ -8,3 +11,7 @@ const renderAllHTML = () => {
 
 renderAllHTML()
 
+document.addEventListener("stateChanged", event => {
+    console.log("State of data has changed. Regenerating HTML...")
+    renderAllHTML()
+})
