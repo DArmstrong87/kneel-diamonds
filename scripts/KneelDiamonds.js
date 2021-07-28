@@ -5,7 +5,11 @@ import { Orders } from "./Orders.js"
 import { Metals } from "./Metals.js"
 import { addCustomOrder } from "./database.js"
 
-const customOrder = addCustomOrder()
+document.addEventListener("click", event => {
+    if (event.target.id === 'orderButton'){
+        addCustomOrder()
+    }
+})
 
 export const KneelDiamonds = () => {
     return `
@@ -27,7 +31,7 @@ export const KneelDiamonds = () => {
         </article>
 
         <article>
-            <button id="orderButton" onclick="${customOrder}">Create Custom Order</button>
+            <button id="orderButton">Create Custom Order</button>
         </article>
 
         <article class="customOrders">

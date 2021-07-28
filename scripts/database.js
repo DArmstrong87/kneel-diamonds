@@ -34,9 +34,8 @@ const database = {
             timestamp: 1614659931693
         }
     ],
-    orderBuilder: [
+    orderBuilder: 
         {   }
-    ]
 }
 
 export const getMetals = () => {
@@ -55,6 +54,7 @@ export const getOrders = () => {
     return database.customOrders.map(order => ({...order}))
 }
 
+
 // Order builder for setting temporary state.
 export const setMetal = (id) => {
     database.orderBuilder.metalId = id
@@ -70,6 +70,7 @@ export const setStyle = (id) => {
 
 // Function to permenantly save order.
 export const addCustomOrder = () => {
+    // Copy the current state of user choices
     const newOrder = {...database.orderBuilder}
 
     // Add a new primary key to the object
