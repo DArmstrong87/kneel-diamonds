@@ -5,6 +5,7 @@ document.addEventListener(
     (event) => {
         if (event.target.name === "type"){
             setType(parseInt(event.target.value))
+            console.log("State of data has changed. Regenerating HTML...")
         }
     }
 )

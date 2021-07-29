@@ -7,6 +7,7 @@ document.addEventListener(
     (event) => {
         if (event.target.name === "metal") {
             setMetal(parseInt(event.target.value))
+            console.log("State of data has changed. Regenerating HTML...")
         }
     }
 )
@@ -17,7 +18,7 @@ export const Metals = () => {
     // This is how you have been converting objects to <li> elements
     for (const metal of metals) {
         html += `<li>
-                <input type="radio" name="metal" value="${metal.id}" /> ${metal.metal}
+                <input type="radio" name="metal" value="${metal.id}" checked/> ${metal.metal}
                 </li>`
     }
 

@@ -1,3 +1,5 @@
+import { renderAllHTML } from "./main.js"
+
 /*
 
     This module contains all of the data, or state, for the
@@ -70,6 +72,7 @@ export const getTypes = () => {
 // Order builder for setting temporary state.
 export const setMetal = (id) => {
     database.orderBuilder.metalId = id
+    renderAllHTML()
 }
 export const setSize = (id) => {
     database.orderBuilder.sizeId = id
