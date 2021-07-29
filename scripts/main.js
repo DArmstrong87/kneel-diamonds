@@ -1,7 +1,4 @@
-import { addCustomOrder } from "./database.js"
 import { KneelDiamonds } from "./KneelDiamonds.js"
-import { getOrders } from "./database.js"
-const customOrders = getOrders()
 
 const mainContainer = document.querySelector("#container")
 
