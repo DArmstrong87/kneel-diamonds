@@ -10,5 +10,9 @@
 }
 
 .choices {
-    display: flex;   
+    display: flex;
+}
+
+.choices__types__options li{
+    display: flex;
 }
