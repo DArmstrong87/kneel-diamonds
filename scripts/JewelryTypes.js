@@ -19,6 +19,7 @@ export const Types = () => {
                     ${type.type}</input></li>`
         }
     )
+    html += listTypes.join("")
     html += `</ul>`
     return html
 }
