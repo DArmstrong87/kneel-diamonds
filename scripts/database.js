@@ -27,13 +27,13 @@ const database = {
     ],
     types: [
         {id: 1,
-        type: "ring",
+        type: "Ring",
         priceModifier: 1},
         {id: 2,
-        type: "earring",
+        type: "Earring",
         priceModifier: 2},
         {id: 3,
-        type: "necklace",
+        type: "Necklace",
         priceModifier: 4}
     ],
     customOrders: [
@@ -42,6 +42,7 @@ const database = {
             metalId: 3,
             sizeId: 2,
             styleId: 3,
+            typeId: 1,
             timestamp: 1614659931693
         }
     ],
@@ -70,13 +71,14 @@ export const getTypes = () => {
 export const setMetal = (id) => {
     database.orderBuilder.metalId = id
 }
-
 export const setSize = (id) => {
     database.orderBuilder.sizeId = id
 }
-
 export const setStyle = (id) => {
     database.orderBuilder.styleId = id
+}
+export const setType = (id) => {
+    database.orderBuilder.typeId = id
 }
 
 // Function to permenantly save order.

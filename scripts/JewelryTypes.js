@@ -1,6 +1,13 @@
-import { getTypes } from "./database.js";
+import { getTypes, setType } from "./database.js";
 
-
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "type"){
+            setType(parseInt(event.target.value))
+        }
+    }
+)
 
 export const Types = () => {
     const types = getTypes()
@@ -8,7 +15,7 @@ export const Types = () => {
     const listTypes = types.map(
         type => {
             html += `<li>
-                <input type="radio" name="type" value="type.id">
+                <input type="radio" name="type" value="${type.id}">
                     ${type.type}</input></li>`
         }
     )
