@@ -48,8 +48,8 @@ const database = {
             timestamp: 1614659931693
         }
     ],
-    orderBuilder: 
-        {   }
+    orderBuilder: [
+        {  }]
 }
 
 export const getMetals = () => {
@@ -64,6 +64,9 @@ export const getStyles = () => {
 export const getOrders = () => {
     return database.customOrders.map(order => ({...order}))
 }
+export const getOrderBuilder = () => {
+    return database.orderBuilder
+}
 export const getTypes = () => {
     return database.types.map(type => ({...type}))
 }
@@ -72,7 +75,6 @@ export const getTypes = () => {
 // Order builder for setting temporary state.
 export const setMetal = (id) => {
     database.orderBuilder.metalId = id
-    renderAllHTML()
 }
 export const setSize = (id) => {
     database.orderBuilder.sizeId = id
