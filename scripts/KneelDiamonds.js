@@ -31,8 +31,8 @@ export const KneelDiamonds = () => {
             </section>
         </article>
 
-        <article class="choices">
-            <section class="choices__types__options">
+        <article class="type_order">
+            <section class="choices__types">
                 ${Types()}
             </section>
             <section>
