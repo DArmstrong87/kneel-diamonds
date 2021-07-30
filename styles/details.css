@@ -14,10 +14,12 @@
 
 .choices {
     display: flex;
+    margin-bottom: 2em;
 }
 
 .choices__types {
     display: flex;
+    align-items: center;
 }
 
 .choices__types ul {
@@ -25,8 +27,12 @@
     display: flex;
 }
 
+.type__order {
+    display: flex;
+    justify-content: space-around;
+}
+
 #orderButton {
-    margin: 1rem 0 2rem 2rem;
     padding: 0.5rem;
     background-color: rgb(227, 72, 72);
     color: lightgoldenrodyellow;
