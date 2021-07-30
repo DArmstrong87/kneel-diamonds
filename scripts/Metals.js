@@ -2,7 +2,6 @@ import { getMetals, setMetal, getOrderBuilder } from "./database.js"
 import { renderAllHTML } from "./main.js"
 
 const metals = getMetals()
-const orderBuilder = getOrderBuilder()
 
 document.addEventListener(
     "change",
@@ -17,19 +16,19 @@ document.addEventListener(
 
 export const Metals = () => {
     let html = "<ul>"
-
+    const orderBuilder = getOrderBuilder()
     for (const metal of metals) {
-        if(metal.id === orderBuilder.metalId){
-        html += `<li>
+        if (metal.id === orderBuilder.metalId) {
+            html += `<li>
                 <input type="radio" name="metal" value="${metal.id}" checked/> ${metal.metal}
                 </li>`
         } else {
-        html += `<li>
+            html += `<li>
                 <input type="radio" name="metal" value="${metal.id}"/> ${metal.metal}
                 </li>`
-        }}
+        }
+    }
 
     html += "</ul>"
-
     return html
 }

@@ -5,11 +5,10 @@ import { Orders } from "./Orders.js"
 import { Metals } from "./Metals.js"
 import { addCustomOrder } from "./database.js"
 import { Types } from "./JewelryTypes.js"
-import { renderAllHTML } from "./main.js"
 
-document.addEventListener("click", event => {
-    if (event.target.id === 'orderButton'){
-        addCustomOrder()
+document.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === 'orderButton'){
+            addCustomOrder()
     }
 })
 
