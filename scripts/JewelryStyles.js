@@ -1,31 +1,36 @@
-import { getStyles, setStyle } from "./database.js"
+import { getOrderBuilder, getStyles, setStyle } from "./database.js"
+import { renderAllHTML } from "./main.js"
 
 const styles = getStyles()
 
 document.addEventListener(
     "change",
     (event) => {
-        if (event.target.name === "style"){
+        if (event.target.name === "style") {
             setStyle(parseInt(event.target.value))
             console.log("State of data has changed. Regenerating HTML...")
+            renderAllHTML()
         }
     }
 )
 
 export const JewelryStyles = () => {
     let html = "<ul>"
+    const orderBuilder = getOrderBuilder()
 
-    // Use .map() for converting objects to <li> elements
     const listItemsArray = styles.map(
         style => {
-            html += `<li>
-                    <input type="radio" name="style" value="${style.id}" />
+            if (style.id === orderBuilder.styleId) {
+                return html += `<li>
+                    <input type="radio" name="style" value="${style.id}" checked/>
                     ${style.style}</li>`
+            } else {
+                return html += `<li>
+                    <input type="radio" name="style" value="${style.id}"/>
+                    ${style.style}</li>`
+            }
         }
-    )
-
-    // Join all of the strings in the array into a single string
-    html += listItemsArray.join("")
+    ).join("")
 
     html += "</ul>"
     return html

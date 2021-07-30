@@ -28,13 +28,13 @@ const buildOrderListItem = (order) => {
     )
 
     const totalCost = (foundMetal.price + foundSize.price +
-                        foundStyle.price) * foundType.priceModifier
+        foundStyle.price) * foundType.priceModifier
 
     const costString = totalCost.toLocaleString("en-US", {
         style: "currency",
         currency: "USD"
     })
-    
+
     return `<li>
         Order #${order.id} cost ${costString}
     </li>`
