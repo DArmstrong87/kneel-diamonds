@@ -7,6 +7,7 @@ document.addEventListener(
     (event) => {
         if (event.target.name === "size") {
             setSize(parseInt(event.target.value))
+            console.log("State of data has changed. Regenerating HTML...")
         }
     }
 )

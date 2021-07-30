@@ -1,10 +1,14 @@
-import { getTypes, setType } from "./database.js";
+import { getOrderBuilder, getTypes, setType } from "./database.js";
+import { renderAllHTML } from "./main.js";
+
+const orderBuilder = getOrderBuilder()
 
 document.addEventListener(
     "change",
-    (event) => {
-        if (event.target.name === "type"){
-            setType(parseInt(event.target.value))
+    (changeEvent) => {
+        if (changeEvent.target.name === "type"){
+            setType(parseInt(changeEvent.target.value))
+            console.log("State of data has changed. Regenerating HTML...")
         }
     }
 )
@@ -14,9 +18,9 @@ export const Types = () => {
     let html = `<ul>`
     const listTypes = types.map(
         type => {
-            html += `<li>
-                <input type="radio" name="type" value="${type.id}">
-                    ${type.type}</input></li>`
+                html += `<li>
+                        <input type="radio" name="type" value="${type.id}"/> ${type.type}
+                        </li>`
         }
     )
     html += listTypes.join("")

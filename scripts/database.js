@@ -1,3 +1,5 @@
+import { renderAllHTML } from "./main.js"
+
 /*
 
     This module contains all of the data, or state, for the
@@ -47,7 +49,7 @@ const database = {
         }
     ],
     orderBuilder: 
-        {   }
+        {  }
 }
 
 export const getMetals = () => {
@@ -61,6 +63,9 @@ export const getStyles = () => {
 }
 export const getOrders = () => {
     return database.customOrders.map(order => ({...order}))
+}
+export const getOrderBuilder = () => {
+    return database.orderBuilder
 }
 export const getTypes = () => {
     return database.types.map(type => ({...type}))
