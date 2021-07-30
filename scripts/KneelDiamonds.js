@@ -7,8 +7,8 @@ import { addCustomOrder } from "./database.js"
 import { Types } from "./JewelryTypes.js"
 
 document.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === 'orderButton'){
-            addCustomOrder()
+    if (clickEvent.target.id === 'orderButton') {
+        addCustomOrder()
     }
 })
 
