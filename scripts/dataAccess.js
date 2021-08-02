@@ -34,12 +34,19 @@ export const setType = (id) => {
 }
 
 
+export const zeroOrderBuilder = () => {
+    database.orderBuilder.metalId = 0
+    database.orderBuilder.sizeId = 0
+    database.orderBuilder.styleId = 0
+    database.orderBuilder.typeId = 0
+}
+
 export const addCustomOrder = () => {
     const newOrder = { ...database.orderBuilder }
     const lastIndex = database.customOrders.length - 1
     newOrder.id = database.customOrders[lastIndex].id + 1
     newOrder.timestamp = Date.now()
     database.customOrders.push(newOrder)
-    database.orderBuilder = {}
+    zeroOrderBuilder()
     document.dispatchEvent(new CustomEvent("stateChanged"))
 }
