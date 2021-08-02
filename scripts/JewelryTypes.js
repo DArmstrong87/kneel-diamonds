@@ -1,4 +1,4 @@
-import { getOrderBuilder, getTypes, setType } from "./database.js";
+import { getOrderBuilder, getTypes, setType } from "./dataAccess.js";
 import { renderAllHTML } from "./main.js";
 
 const orderBuilder = getOrderBuilder()
