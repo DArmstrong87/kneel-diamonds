@@ -3,7 +3,7 @@ import { DiamondSizes } from "./DiamondSizes.js"
 import { JewelryStyles } from "./JewelryStyles.js"
 import { Orders } from "./Orders.js"
 import { Metals } from "./Metals.js"
-import { addCustomOrder } from "./database.js"
+import { addCustomOrder } from "./dataAccess.js"
 import { Types } from "./JewelryTypes.js"
 
 document.addEventListener("click", clickEvent => {
