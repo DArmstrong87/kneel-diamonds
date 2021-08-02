@@ -3,12 +3,18 @@ import { DiamondSizes } from "./DiamondSizes.js"
 import { JewelryStyles } from "./JewelryStyles.js"
 import { Orders } from "./Orders.js"
 import { Metals } from "./Metals.js"
-import { addCustomOrder } from "./dataAccess.js"
+import { addCustomOrder, getOrderBuilder } from "./dataAccess.js"
 import { Types } from "./JewelryTypes.js"
+
+const orderBuilder = getOrderBuilder()
 
 document.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === 'orderButton') {
-        addCustomOrder()
+        if (orderBuilder.metalId === 0 || orderBuilder.sizeId === 0 || orderBuilder.styleId === 0 || orderBuilder.typeId === 0) {
+            window.alert('Please make all selections.')
+        } else {
+            addCustomOrder()
+        }
     }
 })
 

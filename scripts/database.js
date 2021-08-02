@@ -53,5 +53,10 @@ export const database = {
         }
     ],
     orderBuilder:
-        {}
+    {
+        metalId: 0,
+        sizeId: 0,
+        styleId: 0,
+        typeId: 0
+    }
 }
